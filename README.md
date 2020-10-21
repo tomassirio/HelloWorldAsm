@@ -27,13 +27,7 @@ sudo apt-get update -y
 sudo apt-get install -y nasm
 ```
 
-For MacOs systems (You will need to install Homebrew first):
-
-```bash
-b
-
-brew install nasm
-```
+#### I'm only going to show this example in a linux system since the sys calls are different for mac, hence the example won't work in that system (believe me, this post was intended for mac as well...)
 
 ## :building_construction: Structure of an ASM program
 
@@ -145,16 +139,14 @@ Linux:
 
 ```bash
 nasm -f elf64 -g -F DWARF helloWorld.asm
-ld -o helloWorld.o helloWorld
-./helloWorld
-```
-
-Mac:
-
-```bash
-nasm -f macho64 helloWorld.asm 
-ld -e _main -macosx_version_min 10.13.0 -static -o hellWorld hellWorld.o
+ld -e start -o helloWorld helloWorld.o
 ./helloWorld
 ```
 
 And that's it for today. You should get a 'Hello World message on your terminal.
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/vr0glcnzknvgu7eixs5o.jpeg)
+
+If you want to see the full code, here is the Repository: [Hello World!](https://github.com/tomassirio/HelloWorldAsm)
+
+
