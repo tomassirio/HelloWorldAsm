@@ -2,11 +2,11 @@ section .data
 msg: DB 'Hello World!', 10
 msgSize EQU $ - msg
 
-global _main
+global start
 
 section .text
 
-    _main:
+    start:
     mov rax, 4          ; function 4
     mov rbx, 1          ; stdout
     mov rcx, msg        ; msg
